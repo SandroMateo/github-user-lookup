@@ -1,10 +1,14 @@
 var User = require("./../js/user.js").userModule;
 
-function displayRepo() {
-  $("#user-respository").text()
+function displayInfo(_username) {
+  $("#output").text("name: " + _username);
 }
 
 $(function() {
-  var user = new User();
-  user.getRepository();
+  $("#username-form").submit(function(event) {
+    event.preventDefault();
+    var user = new User();
+    var username = $("#username-input").val();
+    user.getRepository(username, displayInfo);
+  });
 });
