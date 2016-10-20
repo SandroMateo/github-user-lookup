@@ -1,6 +1,7 @@
 var User = require("./../js/user.js").userModule;
 
 function displayInfo(_repositories) {
+  $("#repos").empty();
   for(var i = 0; i < _repositories.length; i++) {
     $("#repos").append("<li><strong>Name:</strong> " + _repositories[i].name
                     + "<p><strong>Description:</strong> " + _repositories[i].description +"</p>"
